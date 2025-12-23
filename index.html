@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Treasure Box 💝</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="screen1" class="screen active">
+        <div class="container">
+            <div class="stickers">
+                <div class="sticker">💌</div>
+                <div class="sticker">😊</div>
+                <div class="sticker">🥰</div>
+                <div class="sticker">💖</div>
+            </div>
+            
+            <h1>Hai Ada pertanyaan penting nih... 💕</h1>
+            
+            <div class="question">
+                <h2 style="font-size: 2rem; color: #ff3366; margin-bottom: 20px;">
+                    Kamu mau gak jadi pacar aku? 🥺
+                </h2>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn yes-btn" id="yesBtn">MAU! 😍</button>
+                <button class="btn no-btn" id="noBtn">Gak Mau 😅</button>
+            </div>
+            
+            <div class="counter">
+                Udah <span id="attemptCount">0</span>x nyoba klik "Gak Mau" 😏
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: Treasure Box Selection -->
+    <div id="screen2" class="screen">
+        <div class="container">
+            <h1 class="treasure-title">YEY! 🎉 KAMU MAU! 💖</h1>
+            <p class="treasure-subtitle">Silakan dipilih</p>
+            
+            <div class="treasure-boxes">
+                <!-- Box 1: Foto -->
+                <div class="treasure-box" id="box1">
+                    <div class="box-icon">📸</div>
+                    <h3 class="box-title">Foto</h3>
+                    <p class="box-desc">Love💕</p>
+                </div>
+                
+                <!-- Box 2: Makanan -->
+                <div class="treasure-box" id="box2">
+                    <div class="box-icon">🍕</div>
+                    <h3 class="box-title">Makanan dan Minuman Favoritmu</h3>
+                    <p class="box-desc">Makanan dan Minuman🍰</p>
+                </div>
+                
+                <!-- Box 3: Musik -->
+                <div class="treasure-box" id="box3">
+                    <div class="box-icon">🎶</div>
+                    <h3 class="box-title">Playlist Romantis</h3>
+                    <p class="box-desc">Lagu-lagu khusus buat kamu🎵</p>
+                </div>
+                
+                <!-- Box 4: Bunga & Quotes -->
+                <div class="treasure-box" id="box4">
+                    <div class="box-icon">🌸</div>
+                    <h3 class="box-title">Bunga & Kata Semangat</h3>
+                    <p class="box-desc">Buat hari-hari indahmu 🌼</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Photo Gallery -->
+    <div id="screen3" class="screen">
+        <div class="gallery-container fade-in">
+            <button class="back-btn" onclick="backToTreasure()">← Kembali</button>
+            <h2 class="gallery-title"> 💕</h2>
+            <p>Foto-foto kamu yang cantiknya 1000000000000000% no debat💖</p>
+            
+            <div class="photo-frame">
+                <img id="currentPhoto" src="foto1.jpg" alt="foto2.jpg">
+            </div>
+            
+            <div class="photo-info" id="photoCaption">Foto-foto kamu yang cantiknya 1000000000000000% no debat💖</div>
+            
+            <div class="photo-controls">
+                <button class="photo-btn" onclick="prevPhoto()">⏮️ Sebelumnya</button>
+                <button class="photo-btn" onclick="nextPhoto()">Selanjutnya ⏭️</button>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <button class="photo-btn" onclick="startHearts()">💖 Hati</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: Food Gallery -->
+    <div id="screen4" class="screen">
+        <div class="container fade-in">
+            <button class="back-btn" onclick="backToTreasure()">← Kembali</button>
+            <h2 class="treasure-title">Makanan Favorit Kamu 🍴</h2>
+            <p>Ini semua makanan yang bikin kamu senyum-senyum sendiri 😋</p>
+            
+            <div class="food-grid">
+                <!-- GANTI DENGAN MAKANAN FAVORIT PACAR KAMU -->
+                <div class="food-item">
+                    <img class="food-img" src="seblak.jpg" alt="seblak">
+                    <div class="food-name">Seblak</div>
+                </div>
+                <div class="food-item">
+                    <img class="food-img" src="bakso.jpg" alt="bakso">
+                    <div class="food-name">Bakso</div>
+                </div>
+                <div class="food-item">
+                    <img class="food-img" src="pancong.jpg" alt="pancong">
+                    <div class="food-name">Pancong</div>
+                </div>
+                <div class="food-item">
+                    <img class="food-img" src="coklat.jpg" alt="coklat">
+                    <div class="food-name">Coklat</div>
+                </div>
+                <div class="food-item">
+                    <img class="food-img" src="alpukat.jpg" alt="alpukat">
+                    <div class="food-name">Alpukat</div>
+                </div>
+                <div class="food-item">
+                    <img class="food-img" src="sempol.jpg" alt="sempol">
+                    <div class="food-name">Sempol</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; color: #666; font-style: italic;">
+                Nanti kita makan semua ini sama-sama ya! 🥰
+            </p>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: Music Player -->
+    <div id="screen5" class="screen">
+        <div class="container fade-in">
+            <button class="back-btn" onclick="backToTreasure()">← Kembali</button>
+            <h2 class="treasure-title">Playlist Untuk Kamu 🎵</h2>
+            <p>Lagu-lagu khusus buat kamu 💖</p>
+            
+            <div class="music-container">
+                <!-- GANTI LINK SPOTIFY KAMU -->
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6fkrMP0KrETG4Q46BfnWcC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                
+                <p style="margin-top: 30px; color: #ccc; font-size: 1.1rem;">
+                    Playlist ini khusus buat kamu seorang! 🎶
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 6: Flowers & Quotes -->
+    <div id="screen6" class="screen">
+        <div class="flowers-container fade-in">
+            <button class="back-btn" onclick="backToTreasure()">← Kembali</button>
+            <h2 style="color: #ff3366; font-size: 2.5rem; margin-bottom: 30px;">
+                Bunga & Kata Semangat Untukmu 🌸
+            </h2>
+            
+            <div class="quote-box">
+                "Kamu itu seperti bunga terindah di taman hatiku. 
+                Selalu mekar dengan senyumanmu yang manis 💖"
+            </div>
+            
+            <div class="quote-box">
+                "Hari-hari bersamamu itu kayak taman penuh bunga. 
+                Warna-warni dan penuh kebahagiaan 🌺"
+            </div>
+            
+            <div class="quote-box">
+                "Semangat terus ya sayang! Aku selalu ada di sini buat kamu. 
+                Kamu kuat, kamu hebat, kamu spesial! 💪✨"
+            </div>
+            
+            <div class="quote-box">
+                "Semangat kuliahnya ya, apapun yang terjadi aku bakal selalu dukung kamu😊💕"
+            </div>
+            
+            <button class="photo-btn" onclick="createFlowers()" style="margin-top: 30px;">
+                🌸Bunga
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ========== VARIABLES ==========
+        let attempts = 0;
+        let heartsInterval;
+        let currentScreen = 1;
+        
+        // Photo gallery data (GANTI DENGAN FOTO KALIAN)
+        const photos = [
+            {
+                url: "foto1.jpg",
+                caption: "Please jangan terlalu cantik ya nanti buat aku jadi diabetes"
+            },
+            {
+                url: "foto2.jpg",
+                caption: "Aduh senyumnya itu loh"
+            },
+            {
+                url: "foto3.jpg",
+                caption: "Kamu + kaca mata = gada lawan"
+            },
+            {
+                url: "foto4.jpg",
+                caption: "No debat gak ada lawannya"
+            }
+        ];
+        
+        let currentPhotoIndex = 0;
+        
+        // ========== SCREEN MANAGEMENT ==========
+        function showScreen(screenNumber) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(`screen${screenNumber}`).classList.add('active');
+            currentScreen = screenNumber;
+        }
+        
+        function backToTreasure() {
+            showScreen(2);
+        }
+        
+        // ========== PROPOSAL SCREEN ==========
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const attemptCount = document.getElementById('attemptCount');
+        
+        // Move NO button randomly
+        function moveNoButton() {
+            const container = document.querySelector('.container');
+            const btn = noBtn;
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnRect.width - 40;
+            const maxY = containerRect.height - btnRect.height - 40;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            btn.style.position = 'absolute';
+            btn.style.left = `${randomX}px`;
+            btn.style.top = `${randomY}px`;
+            
+            attempts++;
+            attemptCount.textContent = attempts;
+            
+            createHearts(5);
+        }
+        
+        // YES button - Go to treasure selection
+        yesBtn.addEventListener('click', function() {
+            showScreen(2);
+            createHearts(20);
+        });
+        
+        // NO button events
+        noBtn.addEventListener('click', moveNoButton);
+        noBtn.addEventListener('mouseover', function() {
+            if (attempts < 2) moveNoButton();
+        });
+        
+        // ========== TREASURE BOXES ==========
+        document.getElementById('box1').addEventListener('click', function() {
+            showScreen(3);
+            updatePhoto();
+        });
+        
+        document.getElementById('box2').addEventListener('click', function() {
+            showScreen(4);
+        });
+        
+        document.getElementById('box3').addEventListener('click', function() {
+            showScreen(5);
+        });
+        
+        document.getElementById('box4').addEventListener('click', function() {
+            showScreen(6);
+            setTimeout(createFlowers, 500);
+        });
+        
+        // ========== PHOTO GALLERY ==========
+        function updatePhoto() {
+            const photo = photos[currentPhotoIndex];
+            document.getElementById('currentPhoto').src = photo.url;
+            document.getElementById('photoCaption').textContent = photo.caption;
+        }
+        
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updatePhoto();
+            createHearts(3);
+        }
+        
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            updatePhoto();
+            createHearts(3);
+        }
+        
+        // ========== HEARTS ANIMATION ==========
+        function createHearts(count = 10) {
+            const hearts = ['💖', '💗', '💓', '💞', '💕', '💘', '💝'];
+            
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.top = `${Math.random() * 100}%`;
+                    heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+                    heart.style.position = 'fixed';
+                    heart.style.zIndex = '9999';
+                    heart.style.pointerEvents = 'none';
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Animate heart
+                    const animation = heart.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(-${100 + Math.random() * 200}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: 2000 + Math.random() * 2000,
+                        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                    });
+                    
+                    animation.onfinish = () => heart.remove();
+                }, i * 100);
+            }
+        }
+        
+        function startHearts() {
+            heartsInterval = setInterval(() => createHearts(2), 500);
+        }
+        
+        function stopHearts() {
+            clearInterval(heartsInterval);
+        }
+        
+        // ========== FLOWERS ANIMATION ==========
+        function createFlowers() {
+            const flowers = ['🌸', '🌺', '🌼', '🌷', '💐', '🌹', '🌻', '🥀'];
+            const container = document.querySelector('.flowers-container');
+            
+            // Remove existing flowers
+            document.querySelectorAll('.flower').forEach(f => f.remove());
+            
+            // Create new flowers
+            for (let i = 0; i < 15; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+                flower.style.left = `${Math.random() * 90 + 5}%`;
+                flower.style.top = `${Math.random() * 90 + 5}%`;
+                flower.style.fontSize = `${Math.random() * 30 + 20}px`;
+                flower.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                flower.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(flower);
+            }
+        }
+        
+        // ========== INITIALIZE ==========
+        window.addEventListener('DOMContentLoaded', function() {
+            // Create initial hearts
+            setTimeout(() => createHearts(5), 1000);
+        });
+    </script>
+</body>
+</html>
